@@ -1,0 +1,48 @@
+@import "variables";
+
+
+.post-index {
+	&__contents {
+		width: $post-index-width;
+		margin: 0 auto;
+	}
+	&__row {
+		display: flex;
+		margin-bottom: 1.25rem;
+		// justify-content: space-between;
+	}
+	&__row > .post-index__uploaded:not(:last-child) {
+		margin-right: 3.125rem;
+	}
+
+	&__uploaded {
+		position: relative;
+	}
+	&__uploaded-img {
+		width: $uploaded-width;
+		border-radius: 5px;
+	}
+	&__uploaded-username {
+		color: $sub-font-color;
+		font-size: $smaller;
+	}
+
+	&__loading {
+		text-align: center;
+	}
+}
+
+.fa-ellipsis-v {
+	position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    color: white;
+    cursor: pointer;
+    padding: 0.3rem 0.7rem;
+
+    &:hover {
+    	background-color: #babac3;
+    	border-radius: 3px;
+    	color: #444;
+    }
+}

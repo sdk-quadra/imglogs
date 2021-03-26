@@ -1,0 +1,173 @@
+@import url(https://fonts.googleapis.com/css2?family=Amaranth:wght@700&display=swap);body {
+  margin: 0;
+  color: #252525;
+}
+
+.before-login {
+  background-color: #FAFAFA;
+}
+
+header {
+  border-bottom: 1px solid #E4E4E8;
+  padding: 0.7rem 0;
+  margin-bottom: 2rem;
+}
+
+.header__contents {
+  width: 51.25rem;
+  margin: 0 auto;
+  padding: 0.2rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo {
+  font-family: "Amaranth", sans-serif;
+  font-size: 2.1rem;
+  flex-grow: 89;
+}
+
+.header__icon {
+  flex-grow: 4;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__img-upload {
+  font-size: 1.8rem;
+}
+
+.header__account {
+  font-size: 1.7rem;
+}
+
+h1 {
+  font-family: "Amaranth", sans-serif;
+  font-size: 3rem;
+  margin: 0.5rem auto 0.5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem auto 1.5rem;
+  color: #86868B;
+}
+
+input {
+  padding: 0.6rem;
+}
+
+input::-moz-placeholder {
+  color: darkgray;
+}
+
+input:-ms-input-placeholder {
+  color: darkgray;
+}
+
+input::placeholder {
+  color: darkgray;
+}
+
+.domain {
+  width: 31rem;
+  margin: 1rem auto;
+  text-align: center;
+  border: 1px solid #86868B;
+  background-color: white;
+  padding: 1.2rem;
+}
+
+.complement {
+  display: flex;
+  justify-content: center;
+}
+
+.complement__desc {
+  margin: 0 0.5rem;
+}
+
+.complement__desc-link {
+  color: #0095F6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.input-text {
+  display: block;
+  margin: 0.8rem auto 0.8rem;
+  width: 27rem;
+}
+
+.cta {
+  display: block;
+  margin: 1.5rem auto 1rem;
+  background-color: #0095F6;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 3px;
+  border: none;
+  padding: 0.5rem 1.5rem;
+}
+
+.login__logo {
+  font-family: "Amaranth", sans-serif;
+}
+
+.login__desc {
+  color: #86868B;
+}
+
+.login__forget-password-link {
+  color: #252525;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.post-index__contents {
+  width: 51.25rem;
+  margin: 0 auto;
+}
+
+.post-index__row {
+  display: flex;
+  margin-bottom: 1.25rem;
+}
+
+.post-index__row > .post-index__uploaded:not(:last-child) {
+  margin-right: 3.125rem;
+}
+
+.post-index__uploaded {
+  position: relative;
+}
+
+.post-index__uploaded-img {
+  width: 15rem;
+  border-radius: 5px;
+}
+
+.post-index__uploaded-username {
+  color: #86868B;
+  font-size: 0.9rem;
+}
+
+.post-index__loading {
+  text-align: center;
+}
+
+.fa-ellipsis-v {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: white;
+  cursor: pointer;
+  padding: 0.3rem 0.7rem;
+}
+
+.fa-ellipsis-v:hover {
+  background-color: #babac3;
+  border-radius: 3px;
+  color: #444;
+}
+
