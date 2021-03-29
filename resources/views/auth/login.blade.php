@@ -11,38 +11,30 @@
                 イケてる画像をアップ!
             </h2>
 
-            <form method="POST" action="{{ route('login') }}" class="login__form">
-                @csrf
-
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror login__form-email input-text" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="メールアドレス">
-                @error('email')
+            {!! Form::open(['url' => route('login'), 'class' => 'login__form']) !!}
+                {!! Form::token() !!}
+                {!! Form::email('email', null, ['placeholder' => 'メールアドレス', 'class' => 'login__form-email input-text']) !!}
+                    @error('email')
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror login__form-password input-text" name="password" required autocomplete="current-password" placeholder="パスワード">
-                @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-
-                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                <label class="form-check-label" for="remember">
-                    {{ __('Remember Me') }}
-                </label>
-
-                <input type="submit" class="btn btn-primary login__form-submit cta" value="ログインする">
-
-            </form>
+                                <strong>{{ $message }}</strong>
+                            </span>
+                    @enderror
+                {!! Form::password('password', ['placeholder' => 'パスワード', 'class' => 'login__form-password input-text']) !!}
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                {!! Form::checkbox('remember',__('Remember Me'), false, ['id' => 'remember']) !!}
+                {!! Form::label('remember',__('Remember Me')) !!}
+                {!! Form::submit('ログインする', ['class' => 'login__form-submit cta']) !!}
+            {!! Form::close() !!}
 
             @if (Route::has('password.request'))
                 <div class="login__forget-password">
                     <a class="login__forget-password-link" href="{{ route('password.request') }}">パスワードを忘れた場合</a>
                 </div>
             @endif
-
         </div>
 
         <div class="login__has-no-account domain complement">
@@ -52,74 +44,4 @@
     </div>
 
 </body>
-
-{{--<div class="container">--}}
-{{--    <div class="row justify-content-center">--}}
-{{--        <div class="col-md-8">--}}
-{{--            <div class="card">--}}
-{{--                <div class="card-header">{{ __('Login') }}</div>--}}
-
-{{--                <div class="card-body">--}}
-{{--                    <form method="POST" action="{{ route('login') }}">--}}
-{{--                        @csrf--}}
-
-{{--                        <div class="form-group row">--}}
-{{--                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>--}}
-
-{{--                            <div class="col-md-6">--}}
-{{--                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>--}}
-
-{{--                                @error('email')--}}
-{{--                                    <span class="invalid-feedback" role="alert">--}}
-{{--                                        <strong>{{ $message }}</strong>--}}
-{{--                                    </span>--}}
-{{--                                @enderror--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="form-group row">--}}
-{{--                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>--}}
-
-{{--                            <div class="col-md-6">--}}
-{{--                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">--}}
-
-{{--                                @error('password')--}}
-{{--                                    <span class="invalid-feedback" role="alert">--}}
-{{--                                        <strong>{{ $message }}</strong>--}}
-{{--                                    </span>--}}
-{{--                                @enderror--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="form-group row">--}}
-{{--                            <div class="col-md-6 offset-md-4">--}}
-{{--                                <div class="form-check">--}}
-{{--                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>--}}
-
-{{--                                    <label class="form-check-label" for="remember">--}}
-{{--                                        {{ __('Remember Me') }}--}}
-{{--                                    </label>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="form-group row mb-0">--}}
-{{--                            <div class="col-md-8 offset-md-4">--}}
-{{--                                <button type="submit" class="btn btn-primary">--}}
-{{--                                    {{ __('Login') }}--}}
-{{--                                </button>--}}
-
-{{--                                @if (Route::has('password.request'))--}}
-{{--                                    <a class="btn btn-link" href="{{ route('password.request') }}">--}}
-{{--                                        {{ __('Forgot Your Password?') }}--}}
-{{--                                    </a>--}}
-{{--                                @endif--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
 @endsection
