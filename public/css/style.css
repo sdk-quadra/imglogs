@@ -156,6 +156,10 @@ input::placeholder {
   text-align: center;
 }
 
+#post-index__last-page {
+  display: none;
+}
+
 .fa-ellipsis-v {
   position: absolute;
   top: 0.5rem;

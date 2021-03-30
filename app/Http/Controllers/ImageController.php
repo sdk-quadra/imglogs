@@ -2,21 +2,28 @@
 
 namespace App\Http\Controllers;
 
+//use Dotenv\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Image;
 use App\Models\User;
 use InterventionImage;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class ImageController extends Controller
 {
+    const IMG_COL_NUM = 3;
+    const IMG_ROW_NUM = 2;
     public function index()
     {
-        $uploads = Image::with('user:id,name')->get(['user_id', 'img']);
+        $uploads = Image::with('user:id,name')->select('user_id', 'img')->paginate(self::IMG_COL_NUM * self::IMG_ROW_NUM);
+        $loading = asset('storage').'/uploads/loading.gif';
 
         return response()->view("images/index", [
-            "images" => $uploads
+            "images" => $uploads,
+            "loading" => $loading,
         ]);
     }
 
@@ -36,6 +43,8 @@ class ImageController extends Controller
 
         $user_id = Auth::id();
 
+        $this->validateData($request);
+
         if($upload_image) {
             $path = $upload_image->store('uploads','public');
             $storage_path = storage_path('app/public/'.$path);
@@ -51,6 +60,11 @@ class ImageController extends Controller
         }
 
         return redirect('/images');
+    }
+    private function validateData($request) {
+        $request->validate([
+            'img' => 'max:50'
+        ]);
     }
 
     public function show($id)
