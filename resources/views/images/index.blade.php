@@ -31,11 +31,10 @@
                 @if(($loop->iteration) % 3 == 1)
                     <div class="post-index__row">
                 @endif
-
                         <div class="post-index__uploaded">
                             <i class="fas fa-ellipsis-v"></i>
-                            <img class="post-index__uploaded-img" src="{{ asset('storage')}}/{{$image->img}}">
-                            <div class="post-index__uploaded-username">alexa</div>
+                            <img class="post-index__uploaded-img" src="{{ asset('storage')}}/{{ $image->img }}">
+                            <div class="post-index__uploaded-username">{{ $image->user->name }}</div>
                         </div>
 
                 @if(($loop->iteration) % 3 == 0)
@@ -43,9 +42,9 @@
                 @endif
             @endforeach
 
-            <div class="post-index__loading">
-                <img class="post-index__loading-img" src="./images/loading.gif">
-            </div>
+{{--            <div class="post-index__loading">--}}
+{{--                <img class="post-index__loading-img" src="./images/loading.gif">--}}
+{{--            </div>--}}
 
         </div>
     </div>
