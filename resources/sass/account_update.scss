@@ -1,1 +1,10 @@
 @import "variables";
+.account-update {
+    &__logout-link {
+        border: none;
+        background: no-repeat;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 0;
+    }
+}

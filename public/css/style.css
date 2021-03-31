@@ -27,6 +27,11 @@ header {
   flex-grow: 89;
 }
 
+.header__logo-link {
+  text-decoration: none;
+  color: #252525;
+}
+
 .header__icon {
   flex-grow: 4;
   display: flex;
@@ -52,6 +57,10 @@ header {
 
 .header__account {
   font-size: 1.7rem;
+}
+
+.header__account-link {
+  color: #252525;
 }
 
 h1 {
@@ -121,6 +130,12 @@ input::placeholder {
   border-radius: 3px;
   border: none;
   padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+
+.fa-plus-square,
+.fa-user-alt {
+  cursor: pointer;
 }
 
 .login__logo {
@@ -186,5 +201,13 @@ input::placeholder {
   background-color: #babac3;
   border-radius: 3px;
   color: #444;
+}
+
+.account-update__logout-link {
+  border: none;
+  background: no-repeat;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
 }
 

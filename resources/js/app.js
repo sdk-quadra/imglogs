@@ -27,10 +27,14 @@ Vue.component('image-index',require('./components/ImageIndex.vue').default);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+//
+// const app = new Vue({
+//     el: '#post-index',
+// });
+
+import "./imageUpload"
 
 const app = new Vue({
     el: '#post-index',
 });
-
-import "./imageUpload"
 

@@ -16,20 +16,24 @@ class ImageController extends Controller
 {
     const IMG_COL_NUM = 3;
     const IMG_ROW_NUM = 2;
+    const IMG_MAX_KB = 50;
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $uploads = Image::with('user:id,name')->select('user_id', 'img')->paginate(self::IMG_COL_NUM * self::IMG_ROW_NUM);
         $loading = asset('storage').'/uploads/loading.gif';
+        $user_id = Auth::id();
 
         return response()->view("images/index", [
             "images" => $uploads,
+            "user_id" => $user_id,
             "loading" => $loading,
         ]);
-    }
-
-    public function create()
-    {
-        //
     }
 
     public function store(Request $request)
@@ -63,23 +67,8 @@ class ImageController extends Controller
     }
     private function validateData($request) {
         $request->validate([
-            'img' => 'max:50'
+            'img' => 'max:'.self::IMG_MAX_KB
         ]);
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     public function destroy($id)

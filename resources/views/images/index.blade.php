@@ -4,12 +4,11 @@
     <header>
         <div class="header__contents">
             <div class="header__logo">
-                IMGLOGS!
+                <a href="/" class="header__logo-link">IMGLOGS!</a>
             </div>
 
             <div class="header__icon">
                 <div class="header__img-upload">
-{{--                    <i class="far fa-plus-square"></i>--}}
                     {!! Form::open(['url' => route('images.store'), 'files' => true, 'id' => 'header__img-upload-form']) !!}
 
                     <label for="img"><i class="far fa-plus-square"></i></label>
@@ -21,7 +20,7 @@
                 </div>
 
                 <div class="header__account">
-                    <i class="fas fa-user-alt"></i>
+                    <a href="{{ action('UserController@edit', $user_id) }}" class="header__account-link"><i class="fas fa-user-alt"></i></a>
                 </div>
             </div>
         </div>
@@ -72,5 +71,4 @@
         </div>
 
     </div>
-
 @endsection
