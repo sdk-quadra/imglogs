@@ -11,6 +11,7 @@
                 <div class="header__img-upload">
                     {!! Form::open(['url' => route('images.store'), 'files' => true, 'id' => 'header__img-upload-form']) !!}
 
+
                     <label for="img"><i class="far fa-plus-square"></i></label>
                     {!! Form::label('img', '', ['class' => 'header__img-upload-hidden-label']) !!}
 
