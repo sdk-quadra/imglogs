@@ -12,7 +12,6 @@
             </h2>
 
             {!! Form::open(['url' => route('login'), 'class' => 'login__form']) !!}
-                {!! Form::token() !!}
                 {!! Form::email('email', null, ['placeholder' => 'メールアドレス', 'class' => 'login__form-email input-text']) !!}
                     @error('email')
                     <span class="invalid-feedback" role="alert">
