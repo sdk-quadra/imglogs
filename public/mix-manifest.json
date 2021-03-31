@@ -1,5 +1,8 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/style.css": "/css/style.css",
-    "/js/popper.js": "/js/popper.js"
+    "/js/app.js": "/js/app.js?id=fafac69ed3800ece2344",
+    "/css/style.css": "/css/style.css?id=6d7b04a7bd303eb65e36",
+    "/js/app.js.map": "/js/app.js.map?id=3f967f8254486b7d37bb",
+    "/css/style.css.map": "/css/style.css.map?id=df8dd92203c511ff4d6e",
+    "/js/popper.js": "/js/popper.js?id=dd7af605f50b0b6ca999",
+    "/js/popper.js.map": "/js/popper.js.map?id=8eb8113d52b17614156e"
 }
