@@ -9,7 +9,15 @@
 
             <div class="header__icon">
                 <div class="header__img-upload">
-                    <i class="far fa-plus-square"></i>
+{{--                    <i class="far fa-plus-square"></i>--}}
+                    {!! Form::open(['url' => route('images.store'), 'files' => true, 'id' => 'header__img-upload-form']) !!}
+
+                    <label for="img"><i class="far fa-plus-square"></i></label>
+                    {!! Form::label('img', '', ['class' => 'header__img-upload-hidden-label']) !!}
+
+                    {!! Form::file('img', ['class' => 'header__img-upload-hidden-file']) !!}
+                    {!! Form::submit('アップする', ['class' => 'header__img-upload-hidden-submit']) !!}
+                    {!! Form::close() !!}
                 </div>
 
                 <div class="header__account">
@@ -29,10 +37,11 @@
         </div>
     @endif
 
-    {!! Form::open(['url' => route('images.store'), 'files' => true]) !!}
-    {!! Form::file('img') !!}
-    {!! Form::submit('アップする') !!}
-    {!! Form::close() !!}
+    @if (session('image-upload-status'))
+        <div class="alert alert-success">
+            {{ session('image-upload-status') }}
+        </div>
+    @endif
 
     <div id="post-index">
 

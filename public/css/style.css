@@ -31,10 +31,23 @@ header {
   flex-grow: 4;
   display: flex;
   justify-content: space-between;
+  color: #252525;
 }
 
 .header__img-upload {
   font-size: 1.8rem;
+}
+
+.header__img-upload-hidden-label {
+  display: none;
+}
+
+.header__img-upload-hidden-file {
+  display: none;
+}
+
+.header__img-upload-hidden-submit {
+  display: none;
 }
 
 .header__account {

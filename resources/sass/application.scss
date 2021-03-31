@@ -5,7 +5,7 @@ body {
 	color: $base-font-color;
 }
 
-.before-login { 
+.before-login {
 	background-color: $bg-before-login;
 }
 
@@ -26,16 +26,26 @@ header {
 	&__logo {
 		font-family: $logo-font;
 		font-size: 2.1rem;
-		flex-grow: 89; 
+		flex-grow: 89;
 	}
 	&__icon {
 		flex-grow: 4;
 		display: flex;
     	justify-content: space-between;
+        color: $base-font-color;
 	}
 	&__img-upload {
 		font-size: 1.8rem;
 	}
+    &__img-upload-hidden-label {
+        display: none;
+    }
+    &__img-upload-hidden-file {
+        display: none;
+    }
+    &__img-upload-hidden-submit {
+        display: none;
+    }
 	&__account {
 		font-size: 1.7rem;
 	}

@@ -31,3 +31,6 @@ Vue.component('image-index',require('./components/ImageIndex.vue').default);
 const app = new Vue({
     el: '#post-index',
 });
+
+import "./imageUpload"
+

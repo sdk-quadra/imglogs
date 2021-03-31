@@ -59,7 +59,7 @@ class ImageController extends Controller
             }
         }
 
-        return redirect('/images');
+        return redirect('/images')->with('image-upload-status', '画像をアップしました!');
     }
     private function validateData($request) {
         $request->validate([
