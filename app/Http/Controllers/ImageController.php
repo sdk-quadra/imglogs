@@ -16,7 +16,7 @@ class ImageController extends Controller
 {
     const IMG_COL_NUM = 3;
     const IMG_ROW_NUM = 2;
-    const IMG_MAX_KB = 50;
+    const IMG_MAX_KB = 500;
 
     public function __construct()
     {

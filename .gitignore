@@ -21,6 +21,10 @@
 /storage/framework/views/*
 !/storage/framework/views/.keep
 
+!/storage/uploads/
+/storage/uploads/*
+!/storage/uploads/loading.gif
+
 /vendor
 .env
 .env.backup
