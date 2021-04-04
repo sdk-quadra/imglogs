@@ -1,6 +1,10 @@
 /node_modules
 /public/hot
-/public/storage
+/public/storage/*
+!/public/storage/
+/public/storage/uploads/*
+!/public/storage/uploads/
+!/public/storage/uploads/loading.gif
 
 /storage/*
 !/storage/framework/
