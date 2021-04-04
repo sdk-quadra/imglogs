@@ -9,6 +9,7 @@
 * $ php artisan key:generate してください
 * $ php artisan migrate してください
 * $ php artisan storage:link してください
+  * エラーが出た場合は、publicフォルダ直下にできたstorageフォルダを削除してもう一度 $ php artisan storage:link を実行してください
 * $ php artisan serveして、 http://localhost.8000 にアクセスしてください
 
 ## 画像表示
